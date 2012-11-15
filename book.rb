@@ -26,4 +26,8 @@ class Book
 	def lost
 		@status = :lost
 	end
+
+	def available?
+		@status == :available
+	end
 end

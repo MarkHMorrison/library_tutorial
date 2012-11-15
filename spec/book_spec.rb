@@ -68,4 +68,7 @@ describe Book do
 		end
 	end
 
+	describe "when a book is available" do
+		it { @book.should be_available }
+	end
 end
