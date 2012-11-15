@@ -2,24 +2,30 @@
 - !ruby/object:Book 
   author: Douglas Crockford
   category: :development
+  status: :available
   title: "JavaScript: The Good Parts"
 - !ruby/object:Book 
   author: Jeffrey Zeldman
   category: :design
+  status: :available
   title: Designing with Web Standards
 - !ruby/object:Book 
   author: Steve Krug
   category: :usability
+  status: :available
   title: Don't Make me Think
 - !ruby/object:Book 
   author: Stoyan Stefanov
   category: :development
+  status: :available
   title: JavaScript Patterns
 - !ruby/object:Book 
   author: Ethan Marcotte
   category: :design
+  status: :available
   title: Responsive Web Design
 - !ruby/object:Book 
   author: Uncle Bob Martin
   category: :development
+  status: :available
   title: The Clean Coder

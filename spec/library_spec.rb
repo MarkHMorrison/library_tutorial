@@ -14,9 +14,11 @@ describe "Library object" do
 			f.write YAML::dump lib_obj
 		end
 	end
+
 	before :each do
 		@lib = Library.new "books.yml"
 	end
+
 	describe "#new" do
 		context "with no parameters" do
 			it "has no books" do
