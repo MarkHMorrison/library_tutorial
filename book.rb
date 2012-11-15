@@ -22,4 +22,8 @@ class Book
 			raise 'Book is not checked out'
 		end
 	end
+
+	def lost
+		@status = :lost
+	end
 end

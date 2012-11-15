@@ -61,5 +61,11 @@ describe Book do
 		end
 	end
 	
+	describe "#lost" do
+		it "changes status to lost" do
+			@book.lost
+			@book.status.should eql :lost
+		end
+	end
 
 end
