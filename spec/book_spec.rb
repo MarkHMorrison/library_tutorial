@@ -27,20 +27,16 @@ describe Book do
 		end
 	end
 
-	describe "#checkout" do
+	describe "checking out a book" do
+		before :each do
+			@book.checkout
+		end
+
 		context "when book is available" do
-			it "changes status to loaned" do
-				@book.status.should eql :available
-				@book.checkout
-				@book.status.should eql :on_loan
-			end
+			it { @book.status.should eql :on_loan } 
 		end
 		context "when book is not available" do
-			it "raises an error" do
-				@book.checkout
-				@book.status.should eql :on_loan
-				lambda { @book.checkout }.should raise_error
-			end
+			it { lambda { @book.checkout }.should raise_error }
 		end
 	end
 
@@ -60,6 +56,7 @@ describe Book do
 			end
 		end
 	end
+
 	
 	describe "#lost" do
 		it "changes status to lost" do
@@ -71,4 +68,30 @@ describe Book do
 	describe "when a book is available" do
 		it { @book.should be_available }
 	end
+
+	describe "placeing a book on hold" do
+		before :each do
+			@book.hold
+		end
+
+		context "the book is available" do
+			it "should change status to on hold" do
+				@book.status.should == :on_hold
+			end
+		end
+	end
+
+	describe "when removing a book from hold" do
+		before :each do
+			@book.hold
+			@book.release
+		end
+
+		context "the book is on hold" do
+			it "should change status to available" do
+				@book.status.should == :available
+			end
+		end
+	end
+
 end

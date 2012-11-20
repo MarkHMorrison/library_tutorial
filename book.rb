@@ -30,4 +30,12 @@ class Book
 	def available?
 		@status == :available
 	end
+
+	def hold
+		@status = :on_hold
+	end
+
+	def release
+		@status = :available
+	end
 end
